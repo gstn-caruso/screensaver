@@ -3,6 +3,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 .Grid {
   width: 100vw;
   height: 100vh;
@@ -24,8 +28,31 @@ body {
   top: 0;
 }
 
-.DateTime {
-  opacity: 0.8;
+.Info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   margin: 3rem;
+}
+
+.DateTime {
+  grid-column: 3;
+  grid-row: 2;
+
+  opacity: 0.8;
   text-shadow: 0 0 0 black, 0 0 2em black, 0 0 1rem black;
+}
+
+.Weather {
+  grid-column: 3;
+  grid-row: 3;
+
+  opacity: 0.8;
+  text-shadow: 0 0 0 black, 0 0 2em black, 0 0 1rem black;
+}
+
+.Weather .temperature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

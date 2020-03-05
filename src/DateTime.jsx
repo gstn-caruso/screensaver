@@ -6,12 +6,9 @@ export default class DateTime extends React.Component{
     this.state = { date: new Date() }
   }
 
-  currentDate = () => {
-    return this.state.date.toDateString();
-  };
-
   currentTime = () => {
-    return `${this.state.date.getHours()}:${this.state.date.getMinutes()}`;
+    const timeFormat = { hour12: false, hour: "numeric", minute: "numeric" };
+    return `${this.state.date.toLocaleTimeString('en-US', timeFormat)}`;
   };
 
   componentDidMount() {
@@ -23,7 +20,6 @@ export default class DateTime extends React.Component{
     return (
       <section className={"DateTime"}>
         <p>{this.currentTime()}</p>
-        <p>{this.currentDate()}</p>
       </section>
     );
   }

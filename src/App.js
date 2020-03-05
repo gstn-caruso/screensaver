@@ -3,7 +3,7 @@ import './App.css';
 import Grid from "./Grid";
 
 const oneSecond = 1000;
-const oneMinute = 60 * oneSecond;
+const oneMinute = 10 * oneSecond;
 
 const backgroundRefreshInterval = oneMinute;
 const dateTimeWidgetRefreshInterval = oneSecond;

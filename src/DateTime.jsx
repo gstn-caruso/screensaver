@@ -17,10 +17,6 @@ export default class DateTime extends React.Component{
   }
 
   render() {
-    return (
-      <section className={"DateTime"}>
-        <p>{this.currentTime()}</p>
-      </section>
-    );
+    return <p className={"DateTime"}>{this.currentTime()}</p>;
   }
 }

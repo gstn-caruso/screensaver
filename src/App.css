@@ -12,17 +12,20 @@ body {
   flex-direction: column;
   text-align: right;
 
+  position: relative;
+
   background-color: black;
   color: white;
   font-size: 4vw;
 }
 
-.DateTime {
-  margin: 3rem;
+.BackgroundImage {
+  position: absolute;
+  top: 0;
 }
 
-.DateTime > p {
-  opacity: 80%;
-  margin: 0;
+.DateTime {
+  opacity: 0.8;
+  margin: 3rem;
   text-shadow: 0 0 0 black, 0 0 2em black, 0 0 1rem black;
 }

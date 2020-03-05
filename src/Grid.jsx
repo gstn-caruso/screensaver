@@ -1,10 +1,11 @@
 import React from "react";
 import DateTime from "./DateTime";
+import BackgroundImage from "./BackgroundImage";
 
 export default class Grid extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { backgroundImageUrl: '' };
+    this.state = { imageUrl: '' };
   }
 
   clientResolution = () => `${window.innerWidth}x${window.innerHeight}`;
@@ -12,8 +13,14 @@ export default class Grid extends React.Component {
   apiPath = () => `https://source.unsplash.com/random/${this.clientResolution()}`;
 
   fetchImage = () => {
-    return fetch(this.apiPath())
-      .then(({url}) => this.setState({ backgroundImageUrl: url }))
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', () => {
+      const responseURL = xhr.responseURL;
+      this.setState({imageUrl: responseURL});
+    });
+
+    xhr.open('GET', this.apiPath());
+    xhr.send()
   };
 
   componentDidMount() {
@@ -23,10 +30,9 @@ export default class Grid extends React.Component {
 
   render() {
     return (
-      <section style={{backgroundImage: `url(${this.state.backgroundImageUrl})`}} className={"Grid"}>
-        <DateTime
-          dateTimeWidgetRefreshInterval={this.props.dateTimeWidgetRefreshInterval}
-        />
+      <section className={"Grid"}>
+        <BackgroundImage imageUrl={this.state.imageUrl} />
+        <DateTime dateTimeWidgetRefreshInterval={this.props.dateTimeWidgetRefreshInterval} />
       </section>
     );
   }

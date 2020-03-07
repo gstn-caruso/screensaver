@@ -7,10 +7,11 @@ export default class Grid extends React.Component {
   render() {
     return (
       <section className={"Grid"}>
+        <div className={"Shadow"} />
         <BackgroundImage refreshInterval={this.props.backgroundRefreshInterval} />
         <section className={"Info"}>
-          <DateTime dateTimeWidgetRefreshInterval={this.props.dateTimeWidgetRefreshInterval} />
           <Weather />
+          <DateTime dateTimeWidgetRefreshInterval={this.props.dateTimeWidgetRefreshInterval} />
         </section>
       </section>
     );

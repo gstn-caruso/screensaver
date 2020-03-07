@@ -28,7 +28,7 @@ export default class Weather extends React.Component {
     xhr.addEventListener('load', () => {
       const response = JSON.parse(xhr.responseText);
 
-      const temperature = response.main.feels_like;
+      const temperature = Math.floor(response.main.feels_like);
       const iconUrl = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
 
       this.setState({

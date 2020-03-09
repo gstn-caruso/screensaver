@@ -43,11 +43,11 @@ export default class Weather extends React.Component {
 
   render() {
     return this.apiKey ?
-      <section className={"Weather"}>
-        <section className={"temperature"}>
+      <div className={"Weather"}>
+        <div className={"temperature"}>
           <img src={this.state.iconUrl}/>
           <p>{this.state.temperature}°C</p>
-        </section>
-      </section> : null
+        </div>
+      </div> : null
   }
 }

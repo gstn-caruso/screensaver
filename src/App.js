@@ -1,16 +1,23 @@
 import React from 'react';
 import './App.css';
-import Grid from "./Grid";
+import BackgroundImage from "./BackgroundImage";
+import Weather from "./Weather";
+import DateTime from "./DateTime";
 
 const oneSecond = 1000;
-const oneMinute = 10 * oneSecond;
-
-const backgroundRefreshInterval = oneMinute;
+const backgroundRefreshInterval = 10 * oneSecond;
 const dateTimeWidgetRefreshInterval = oneSecond;
 
-const App = () => <Grid
-  backgroundRefreshInterval={backgroundRefreshInterval}
-  dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval}
-/>;
+const App = () => {
+    return <div className={"Grid"}>
+      <div className={"Shadow"}/>
+      <BackgroundImage refreshInterval={backgroundRefreshInterval}/>
+      <div className={"Info"}>
+        <Weather/>
+        <DateTime dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval}/>
+      </div>
+    </div>;
+  }
+;
 
 export default App;

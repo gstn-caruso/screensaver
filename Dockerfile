@@ -6,7 +6,7 @@ RUN npm install
 RUN react-scripts build
 
 FROM mhart/alpine-node
-RUN yarn global add serve
+RUN npm install serve -g
 WORKDIR /app
 COPY --from=builder /app/build .
 CMD ["serve", "-p", "8080", "-s", "."]

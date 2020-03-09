@@ -1,8 +1,6 @@
 import React from "react";
 
 export default class Weather extends React.Component {
-  apiKey = process.env.REACT_APP_WAPI_KEY;
-
   constructor(props) {
     super(props);
     this.state = {temperature: 0, iconUrl: ''}
@@ -12,18 +10,9 @@ export default class Weather extends React.Component {
     this.fetchTemperature()
   }
 
-  humanize = (str) => {
-    return str
-      .replace(/^[\s_]+|[\s_]+$/g, '')
-      .replace(/[_\s]+/g, ' ')
-      .replace(/^[a-z]/, function (m) {
-        return m.toUpperCase();
-      });
-  };
-
   fetchTemperature = () => {
     const currentCityName = "Buenos Aires";
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${currentCityName}&appid=${this.apiKey}&units=metric`;
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${currentCityName}&appid=${process.env.REACT_APP_WAPI_KEY}&units=metric`;
     let xhr = new XMLHttpRequest();
     xhr.addEventListener('load', () => {
       const response = JSON.parse(xhr.responseText);
@@ -42,12 +31,11 @@ export default class Weather extends React.Component {
   };
 
   render() {
-    return this.apiKey ?
-      <div className={"Weather"}>
+    return <div className={"Weather"}>
         <div className={"temperature"}>
-          <img src={this.state.iconUrl}/>
+          <img alt="weather icon" src={this.state.iconUrl}/>
           <p>{this.state.temperature}°C</p>
         </div>
-      </div> : null
+      </div>
   }
 }

@@ -29,6 +29,11 @@ p {
   box-shadow: inset 0 -6rem 15rem 0 black;
 }
 
+.BackgroundImageContainer {
+  position: absolute;
+  top: 0;
+}
+
 .BackgroundImage {
   position: absolute;
   top: 0;
@@ -57,4 +62,22 @@ p {
 .Weather .temperature {
   display: flex;
   align-items: center;
+}
+
+.image-enter {
+  opacity: 0.01;
+}
+
+.image-enter.image-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.image-leave {
+  opacity: 1;
+}
+
+.image-leave.image-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

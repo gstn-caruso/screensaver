@@ -12,13 +12,13 @@ export default class Weather extends React.Component {
 
   fetchTemperature = () => {
     const currentCityName = "Buenos Aires";
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${currentCityName}&appid=${process.env.REACT_APP_WAPI_KEY}&units=metric`;
+    const apiUrl = `//api.openweathermap.org/data/2.5/weather?q=${currentCityName}&appid=${process.env.REACT_APP_WAPI_KEY}&units=metric`;
     let xhr = new XMLHttpRequest();
     xhr.addEventListener('load', () => {
       const response = JSON.parse(xhr.responseText);
 
       const temperature = Math.floor(response.main.feels_like);
-      const iconUrl = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
+      const iconUrl = `//openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
 
       this.setState({
         temperature: temperature,

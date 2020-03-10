@@ -10,7 +10,6 @@ const dateTimeWidgetRefreshInterval = oneSecond;
 
 const App = () => {
     return <div className={"Grid"}>
-      <div className={"Shadow"}/>
       <BackgroundImage refreshInterval={backgroundRefreshInterval}/>
       <div className={"Info"}>
         <Weather/>

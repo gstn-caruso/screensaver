@@ -1,13 +1,9 @@
 import React from "react";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {last} from "underscore";
-
-const Image = props => <img className={"BackgroundImage"} src={props.src}  alt="" />;
 
 class BackgroundImage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {images: []}
+    this.state = {imageUrl: []}
   }
 
   clientResolution = () => `${window.innerWidth}x${window.innerHeight}`;
@@ -18,14 +14,12 @@ class BackgroundImage extends React.Component {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', () => {
       const responseURL = xhr.responseURL;
-      this.setState((prevState) => {return { images: prevState.images.concat(responseURL) }});
+      this.setState({imageUrl: responseURL});
     });
 
     xhr.open('GET', this.apiPath());
     xhr.send()
   };
-
-  images = () => last(this.state.images, 2).map(imageUrl => <Image key={imageUrl} src={imageUrl}/>);
 
   componentDidMount() {
     this.fetchImage();
@@ -34,11 +28,7 @@ class BackgroundImage extends React.Component {
 
   render() {
     return <div className={"BackgroundImageContainer"}>
-      <ReactCSSTransitionGroup transitionName="image"
-                               transitionEnterTimeout={1000}
-                               transitionLeaveTimeout={300}>
-          {this.images()}
-      </ReactCSSTransitionGroup>
+      <img src={this.state.imageUrl}  alt="" />
     </div>
   }
 }

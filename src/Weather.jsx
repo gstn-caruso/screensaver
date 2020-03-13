@@ -7,7 +7,8 @@ export default class Weather extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchTemperature()
+    this.fetchTemperature();
+    setInterval(this.fetchTemperature, this.props.refreshInterval);
   }
 
   fetchTemperature = () => {

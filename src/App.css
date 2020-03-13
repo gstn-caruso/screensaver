@@ -21,9 +21,19 @@ p {
   color: white;
 }
 
+.Shadow {
+  background: linear-gradient(to top,rgba(0,0,0,0.9),rgba(0,0,0,0.1) 100%);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
 .BackgroundImageContainer {
   position: absolute;
   top: 0;
+  z-index: 0;
 }
 
 .Info {
@@ -32,6 +42,7 @@ p {
   align-items: flex-end;
   margin: 3rem;
   opacity: 0.9;
+  z-index: 2;
 }
 
 .DateTime {

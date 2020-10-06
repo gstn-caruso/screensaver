@@ -1,22 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default class DateTime extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = { date: new Date() }
-  }
+const formatDate = (date) => {
+  const timeFormat = { hour12: false, hour: "numeric", minute: "numeric" };
+  return `${date.toLocaleTimeString('en-US', timeFormat)}`;
+};
 
-  currentTime = () => {
-    const timeFormat = { hour12: false, hour: "numeric", minute: "numeric" };
-    return `${this.state.date.toLocaleTimeString('en-US', timeFormat)}`;
-  };
+const DateTime = ({ dateTimeWidgetRefreshInterval }) => {
+  const [time, setTime] = useState(new Date());
 
-  componentDidMount() {
-    const updateTime = () => this.setState({date: new Date()});
-    setInterval(updateTime, this.props.dateTimeWidgetRefreshInterval);
-  }
+  useEffect(() => {
+    const timeout = setTimeout(() => { setTime(new Date()) }, dateTimeWidgetRefreshInterval);
+    return () => { clearTimeout(timeout) }
+  }, [time]);
 
-  render() {
-    return <p className={"DateTime"}>{this.currentTime()}</p>;
-  }
+  return <p className={"DateTime"}>{formatDate(time)}</p>;
 }
+
+export default DateTime;

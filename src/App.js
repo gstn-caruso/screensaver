@@ -10,15 +10,15 @@ const dateTimeWidgetRefreshInterval = oneSecond;
 const weatherRefreshInterval = 7200 * oneSecond;
 
 const App = () => {
-  return <div className={"Grid"}>
-    <div className={"Shadow"} />
-    <BackgroundImage refreshInterval={backgroundRefreshInterval} />
-    <div className={"Info"}>
-      <Weather refreshInterval={weatherRefreshInterval} />
-      <DateTime dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval} />
-    </div>
-  </div>;
-}
-  ;
+    return <div className={"Grid"}>
+      <div className={"Shadow"}/>
+      <BackgroundImage refreshInterval={backgroundRefreshInterval}/>
+      <div className={"Info"}>
+        <Weather refreshInterval={weatherRefreshInterval}/>
+        <DateTime dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval}/>
+      </div>
+    </div>;
+  }
+;
 
 export default App;

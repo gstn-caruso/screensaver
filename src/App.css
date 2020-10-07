@@ -1,5 +1,7 @@
 body {
   overflow: hidden;
+  background-color: black; 
+  margin: 0;
 }
 
 p {

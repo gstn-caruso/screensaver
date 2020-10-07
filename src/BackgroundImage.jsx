@@ -1,4 +1,5 @@
 import React from "react";
+import CrossfadeImage from "./CrossfadeImage";
 
 class BackgroundImage extends React.Component {
   constructor(props) {
@@ -27,9 +28,10 @@ class BackgroundImage extends React.Component {
   }
 
   render() {
-    return <div className={"BackgroundImageContainer"}>
-      <img src={this.state.imageUrl}  alt="" />
-    </div>
+    return <CrossfadeImage
+      src={this.state.imageUrl}
+      containerClass={"BackgroundImageContainer"}
+    />
   }
 }
 

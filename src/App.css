@@ -1,6 +1,5 @@
 body {
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
 }
 
 p {
@@ -17,8 +16,6 @@ p {
   text-align: right;
 
   position: relative;
-
-  color: white;
 }
 
 .Shadow {

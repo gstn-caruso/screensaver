@@ -3,7 +3,7 @@ import React from "react";
 class BackgroundImage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {imageUrl: []}
+    this.state = {imageUrl: ""}
   }
 
   clientResolution = () => `${window.innerWidth}x${window.innerHeight}`;

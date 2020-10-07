@@ -11,7 +11,7 @@ const DateTime = ({ dateTimeWidgetRefreshInterval }) => {
   useEffect(() => {
     const timeout = setTimeout(() => { setTime(new Date()) }, dateTimeWidgetRefreshInterval);
     return () => { clearTimeout(timeout) }
-  }, [time]);
+  }, [time, dateTimeWidgetRefreshInterval]);
 
   return <p className={"DateTime"}>{formatDate(time)}</p>;
 }

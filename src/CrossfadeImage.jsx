@@ -38,21 +38,22 @@ export default class CrossfadeImage extends Component {
     return (
       <div className={containerClass}>
         {topSrc &&
-        <img
-          src={topSrc}
-          alt={alt}
-        />}
+          <img
+            src={topSrc}
+            alt={alt}
+          />}
         {bottomSrc &&
-        <img
-          style={{
-            ...style,
-            ...{
-              opacity: bottomOpacity,
-              transition: `opacity ${duration / 1000}s ${timingFunction} ${delay / 1000}s`
-            }
-          }}
-          src={bottomSrc}
-        />}
+          <img
+            style={{
+              ...style,
+              ...{
+                opacity: bottomOpacity,
+                transition: `opacity ${duration / 1000}s ${timingFunction} ${delay / 1000}s`
+              }
+            }}
+            src={bottomSrc}
+            alt={alt}
+          />}
       </div>
     );
   }

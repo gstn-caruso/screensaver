@@ -11,16 +11,16 @@ const dateTimeWidgetRefreshInterval = oneSecond;
 const weatherRefreshInterval = 7200 * oneSecond;
 
 const App = () => {
-    return <div className={"Grid"}>
-      <div className={"crtFlicker"} />
-      <div className={"Shadow"}/>
-      <BackgroundImage refreshInterval={backgroundRefreshInterval}/>
-      <div className={"Info"}>
-        <DateTime dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval}/>
-        <Weather refreshInterval={weatherRefreshInterval}/>
-      </div>
-    </div>;
-  }
-;
+  return <div className={"Grid"}>
+    <div className={"crtFilter"} />
+    <div className={"Shadow"} />
+    <BackgroundImage refreshInterval={backgroundRefreshInterval} />
+    <div className={"Info"}>
+      <DateTime dateTimeWidgetRefreshInterval={dateTimeWidgetRefreshInterval} />
+      <Weather refreshInterval={weatherRefreshInterval} />
+    </div>
+  </div>;
+}
+  ;
 
 export default App;

@@ -1,6 +1,6 @@
 body {
   overflow: hidden;
-  background-color: black; 
+  background-color: black;
   margin: 0;
 }
 
@@ -21,7 +21,7 @@ p {
 }
 
 .Shadow {
-  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1) 70%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1) 70%);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -30,45 +30,36 @@ p {
 }
 
 .BackgroundImageContainer {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
   height: 200%;
 }
 
 .BackgroundImageContainer img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   min-width: 50%;
   min-height: 50%;
 }
 
 .Info {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   margin: 3rem;
   opacity: 0.9;
   z-index: 2;
-}
 
-.DateTime {
   font-size: 7rem;
   text-shadow: 0 0 0 black, 0 0 2em black, 0 0 1rem black;
 }
 
-.Weather {
-  font-size: 2.5rem;
-  margin-right: 2rem;
-  text-shadow: 0 0 0 black, 0 0 2em black, 0 0 1rem black;
-}
-
-.Weather .temperature {
-  display: flex;
-  align-items: center;
+p {
+  color: #2fff00;
 }

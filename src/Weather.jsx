@@ -35,23 +35,19 @@ function fetchWeatherReport() {
 function parseWeatherResponse(textResponse) {
   const response = JSON.parse(textResponse);
   const temperature = Math.floor(response.main.feels_like);
-  const iconUrl = `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
 
   return {
     temperature: temperature,
-    iconUrl: iconUrl
   }
 }
 
 const Weather = ({refreshInterval}) => {
   const [temperature, setTemperature] = useState(null);
-  const [iconUrl, setIconUrl] = useState(null);
 
   function setWeather() {
     fetchWeatherReport().then(report => {
-      const {temperature, iconUrl} = parseWeatherResponse(report);
+      const {temperature } = parseWeatherResponse(report);
       setTemperature(temperature);
-      setIconUrl(iconUrl);
     });
   }
 
@@ -64,13 +60,12 @@ const Weather = ({refreshInterval}) => {
   function render() {
     return <div className={"Weather"}>
       <div className={"temperature"}>
-        <img alt="weather icon" src={iconUrl}/>
         <p>{temperature}°C</p>
       </div>
     </div>
   }
 
-  return (iconUrl && temperature) ? render() : null
+  return temperature ? render() : null
 }
 
 export default Weather;

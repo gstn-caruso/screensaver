@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'VCR OSD';
+  src: local('VCR_OSD'), url('./fonts/VCR_OSD.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'VCR OSD', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

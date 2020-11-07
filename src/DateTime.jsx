@@ -13,7 +13,7 @@ const DateTime = ({ dateTimeWidgetRefreshInterval }) => {
     return () => clearTimeout(timeout)
   }, [time, dateTimeWidgetRefreshInterval]);
 
-  return <p className={"DateTime"}>{formatDate(time)}</p>;
+  return <p>{formatDate(time)}</p>;
 }
 
 export default DateTime;
